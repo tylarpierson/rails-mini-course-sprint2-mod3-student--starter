@@ -52,7 +52,7 @@ module Api
         {
           id: customer.id,
           email: customer.email,
-          orders: customer.orders.map do
+          orders: customer.orders.map do |order|
             {
               id: order.id,
               status: order.status,
