@@ -1,4 +1,4 @@
-# Rails Mini Course - Sprint 2 - Module 3 - You Do (Starter)
+# Ruby on Rails - Intermediate Ruby on Rails - Active Record - Project
 
 ## Setup
 
