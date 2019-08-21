@@ -4,6 +4,8 @@ class Product < ApplicationRecord
 
   validates :name, :cost_cents >= 0, :inventory >= 0, presence: true
 
+  
+
   def available?
     inventory > 0
   end

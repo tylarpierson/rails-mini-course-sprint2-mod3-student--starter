@@ -19,7 +19,7 @@ module Api
 
       def create
         @order = Order.find(params[:order_id])
-        @order_product = OrderProduct.build(order_id)
+        @order_product = OrderProduct.build(order_id: @order_id, product_id: order_product_params[:product_id])
 
         if @order_product.save
           render json: @order, status: :created, location: api_v1_order_url(@order)
