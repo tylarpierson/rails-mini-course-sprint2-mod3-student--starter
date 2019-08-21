@@ -1,9 +1,9 @@
 class Order < ApplicationRecord
   has_many :order_products
   has_many :products through :order_products
-  belongs_to :customers
+  belongs_to :customer
 
-  validates :status, presence: true
+  validates :status, inclusion: { in: ["pending", "shipped"] }
 
   def shippable?
     status != "shipped" && products.count >= 1
