@@ -2,7 +2,7 @@ module Api
   module V1
     class CustomersController < ApplicationController
       def index
-        @customers = Customer.all
+        @customers = Customer.includes(:email, :orders).all
         @formatted_customers = @customers.map { |customer| format_customer(customer) }
 
         render json: @formatted_customers
