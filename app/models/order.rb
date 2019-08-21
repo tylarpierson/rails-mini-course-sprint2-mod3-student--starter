@@ -3,6 +3,8 @@ class Order < ApplicationRecord
   has_many :products through :order_products
   belongs_to :customers
 
+  validates :status, presence: true
+
   def shippable?
     status != "shipped" && products.count >= 1
   end
